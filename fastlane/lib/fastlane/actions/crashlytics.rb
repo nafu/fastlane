@@ -160,7 +160,37 @@ module Fastlane
       def self.details
         [
           "Additionally you can specify `notes`, `emails`, `groups` and `notifications`.",
-          "Distributing to Groups: When using the `groups` parameter, it's important to use the group **alias** names for each group you'd like to distribute to. A group's alias can be found in the web UI. If you're viewing the Beta page, you can open the groups dialog here:"
+        ].join("\n")
+      end
+
+      def self.extra_details
+        [
+          "#### Distributing to Groups",
+          "",
+          "When using the `groups` parameter, it's important to use the group **alias** names for each group you'd like to distribute to. A group's alias can be found in the web UI. If you're viewing the Beta page, you can open the groups dialog here:",
+          "",
+          "![Crashlytics Beta Groups Navigation](../assets/Beta-Groups-Nav.png)",
+          "",
+          "Each group's alias is then listed here:",
+          "",
+          "![Crashlytics Beta Groups Navigation](../assets/Beta-Group-Alias.png)",
+          "",
+          "There are a couple reasons why aliases exist:",
+          "",
+          "1. They are restricted to a safer set of characters to try to make command line invocations a bit easier",
+          "2. They are created once when the group is created, but are not affected by later edits to the group. This allows your scripts to be stable, even if you decide to change the group's name.",
+          "",
+          "So, for the example group above, you should specify",
+          "",
+          "`groups: [\"dev-team-1\"]` :white_check_mark:",
+          "",
+          "_not_",
+          "",
+          "`groups: [\"Android Devs\"]` :x:",
+          "",
+          "##### Environment Variables",
+          "",
+          "The following environment variables may be used in place of parameters: `CRASHLYTICS_API_TOKEN`, `CRASHLYTICS_BUILD_SECRET`, and `CRASHLYTICS_FRAMEWORK_PATH`."
         ].join("\n")
       end
 
