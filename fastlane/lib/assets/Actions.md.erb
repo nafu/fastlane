@@ -34,6 +34,8 @@ import './path/to/other/Fastfile'
 
 <%= "> #{action.details.gsub("\n\n", "\n")}" unless action.details.to_s.empty? %>
 
+<%= "> #{action.extra_details.gsub("\n", "\n>")}" if defined?(action.extra_details) && !action.extra_details.to_s.empty? %>
+
 <%= action.action_name %> | 
 -----|----
 Supported platforms | <%= [:ios, :android, :mac].find_all { |a| action.is_supported?(a) }.join(", ") %>
