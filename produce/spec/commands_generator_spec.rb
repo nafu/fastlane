@@ -31,6 +31,18 @@ describe Produce::CommandsGenerator do
 
       expect(Produce.config[:skip_devcenter]).to be(true)
     end
+
+    it "can use the app_version flag from tool options" do
+      stub_commander_runner_args(['--app_version', '1.0.22'])
+
+      expected_options = FastlaneCore::Configuration.create(available_options, { app_version: '1.0.22' })
+
+      expect(Produce::Service).to receive(:start_producing)
+
+      Produce::CommandsGenerator.start
+
+      expect(Produce.config[:app_version]).to eq('1.0.22')
+    end
   end
 
   describe ":enable_services option handling" do
