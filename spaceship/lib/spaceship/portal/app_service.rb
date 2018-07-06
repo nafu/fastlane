@@ -44,8 +44,8 @@ module Spaceship
       AppGroup = AppService.new_service("APG3427HIY")
       ApplePay = AppService.new_service("OM633U5T5G")
       AssociatedDomains = AppService.new_service("SKC3T5S89Y")
-      ClassKit = AppService.new_service("PKTJAN2017")
       AutoFillCredential = AppService.new_service("CPEQ28MX4E")
+      ClassKit = AppService.new_service("PKTJAN2017")
       DataProtection = AppService.new_service("dataProtection", values: { off: "", complete: "complete", unless_open: "unlessopen", until_first_auth: "untilfirstauth" })
       GameCenter = AppService.new_service("gameCenter")
       HealthKit = AppService.new_service("HK421J6T7P")
@@ -59,12 +59,13 @@ module Spaceship
       NetworkExtension = AppService.new_service("NWEXT04537")
       NFCTagReading = AppService.new_service("NFCTRMAY17")
       PersonalVPN = AppService.new_service("V66P55NK2I")
-      Passbook = AppService.new_service("pass")
       PushNotification = AppService.new_service("push")
       SiriKit = AppService.new_service("SI015DKUHP")
-      VPNConfiguration = AppService.new_service("V66P55NK2I")
       Wallet = AppService.new_service("passbook")
       WirelessAccessory = AppService.new_service("WC421J6T7P")
+      # Keep old naming for backward compatibility
+      Passbook = AppService.new_service("pass")
+      VPNConfiguration = AppService.new_service("V66P55NK2I")
 
       constants.each do |c|
         name = c.to_s
