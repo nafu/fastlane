@@ -61,7 +61,7 @@ module Spaceship
       PersonalVPN = AppService.new_service("V66P55NK2I")
       PushNotification = AppService.new_service("push")
       SiriKit = AppService.new_service("SI015DKUHP")
-      Wallet = AppService.new_service("passbook")
+      Wallet = AppService.new_service("pass")
       WirelessAccessory = AppService.new_service("WC421J6T7P")
       # Keep old naming for backward compatibility
       Passbook = AppService.new_service("pass")
